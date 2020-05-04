@@ -1,0 +1,45 @@
+$tablet: 850px;
+$smartphone: 600px;
+$primaryColor: #2680eb;
+$blackColor: #000000;
+$secondaryColor: #ffffff;
+$grayColor: #707070;
+$shadow: 0px 3px 6px rgba(64, 27, 32, 0.15);
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin smartphone {
+  @media (max-width: #{$smartphone}) {
+    @content;
+  }
+}
+.alarm-preview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  box-shadow: $shadow;
+  padding: 10px;
+  cursor: pointer;
+  .lft {
+    h2 {
+      color: $grayColor;
+      span {
+        font-size: 12px;
+      }
+    }
+    span {
+      font-size: 12px;
+      color: $grayColor;
+    }
+  }
+  .rgt {
+    img {
+      cursor: pointer;
+      width: 35px;
+    }
+  }
+}

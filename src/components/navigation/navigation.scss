@@ -1,3 +1,21 @@
+$tablet: 850px;
+$smartphone: 600px;
+$primaryColor: #2680eb;
+$blackColor: #000000;
+$secondaryColor: #ffffff;
+$grayColor: #e4e4e4;
+$shadow: 0px 4px 20px rgba(64, 27, 32, 0.15);
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin smartphone {
+  @media (max-width: #{$smartphone}) {
+    @content;
+  }
+}
 .navigation {
   display: flex;
   flex-direction: column;
@@ -12,13 +30,13 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    border-bottom: 4px solid #e4e4e4;
+    border-bottom: 4px solid $grayColor;
     padding: 0 10px;
     .active {
       position: relative;
       padding-bottom: 5px;
       a {
-        color: #2680eb;
+        color: $primaryColor;
         font-weight: 500;
         &:after {
           margin: auto;
@@ -28,8 +46,11 @@
           right: 0;
           width: 50px;
           height: 4px;
-          background-color: #2680eb;
+          background-color: $primaryColor;
           bottom: -4px;
+          @include smartphone() {
+            width: 30px;
+          }
         }
       }
     }
@@ -37,6 +58,9 @@
       font-size: 16px;
       letter-spacing: 2px;
       padding-bottom: 6px;
+      @include smartphone() {
+        font-size: 14px;
+      }
     }
   }
 }
