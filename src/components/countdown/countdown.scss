@@ -1,0 +1,114 @@
+$tablet: 850px;
+$smartphone: 600px;
+$primaryColor: #2680eb;
+$blackColor: #000000;
+$secondaryColor: #ffffff;
+$grayColor: #707070;
+$shadow: 0px 4px 6px rgba(64, 27, 32, 0.582);
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin smartphone {
+  @media (max-width: #{$smartphone}) {
+    @content;
+  }
+}
+.countdown {
+  border-radius: 4px;
+  height: calc(100vh - 100px);
+  padding: 20px 10px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  .countdown-display {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    .top-btn,
+    .bottom-btn,
+    .countdown-time {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+    .countdown-time {
+      padding: 0 11px;
+      text-align: center;
+      margin: 10px 0;
+      h2 {
+        color: $grayColor;
+        span {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .bottom-controls {
+    margin-top: auto;
+  }
+  img {
+    height: 20px;
+  }
+  .inc {
+    transform: rotate(90deg);
+    transition: all 0.2s ease-in;
+    &:hover {
+      transform: translateY(-5px) rotate(90deg);
+    }
+  }
+  .dec {
+    transform: rotate(-90deg);
+    transition: all 0.2s ease-in;
+    &:hover {
+      transform: translateY(5px) rotate(-90deg);
+    }
+  }
+  button {
+    height: 50px;
+    padding: 10px;
+    width: 50px;
+    letter-spacing: 0.5px;
+    padding: 0 35px 0 35px;
+    font-size: 15px;
+    // background-color: #99999981;
+    background-color: transparent;
+    color: $grayColor;
+    font-weight: bolder;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .button-start {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: $primaryColor;
+    color: $secondaryColor;
+    &:hover {
+      background-color: $grayColor;
+      color: $primaryColor;
+    }
+  }
+  .button-stop,
+  .button-resume,
+  .button-reset {
+    color: $secondaryColor;
+    background-color: $primaryColor;
+    width: 40%;
+    height: 40px;
+    line-height: 40px;
+    &:hover {
+      background-color: $grayColor;
+      color: $primaryColor;
+    }
+  }
+  .btn-flex {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
