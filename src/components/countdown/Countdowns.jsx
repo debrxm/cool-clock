@@ -36,7 +36,9 @@ class Countdown extends Component {
   resetTimer = () => {
     if (this.state.timerOn === false) {
       this.setState({
-        timerTime: this.state.timerStart
+        timerOn: false,
+        timerStart: 0,
+        timerTime: 0
       });
     }
   };
@@ -83,15 +85,15 @@ class Countdown extends Component {
 
           <div className="countdown-time">
             <h2>
-              {hours}
+              {hours} <br />
               <span>hrs</span>
             </h2>{' '}
             <h2>
-              {minutes}
+              {minutes} <br />
               <span>mins</span>
             </h2>{' '}
             <h2>
-              {seconds}
+              {seconds} <br />
               <span>secs</span>
             </h2>
           </div>
@@ -118,7 +120,7 @@ class Countdown extends Component {
           <div className="btn-flex">
             {timerOn === true && timerTime >= 1000 && (
               <button className="button-stop" onClick={this.stopTimer}>
-                Stop
+                Pause
               </button>
             )}
             {timerOn === false &&
@@ -130,12 +132,11 @@ class Countdown extends Component {
                 </button>
               )}
 
-            {(timerOn === false || timerTime < 1000) &&
-              (timerStart !== timerTime && timerStart > 0) && (
-                <button className="button-reset" onClick={this.resetTimer}>
-                  Reset
-                </button>
-              )}
+            {timerStart !== timerTime && timerStart > 0 && (
+              <button className="button-reset" onClick={this.resetTimer}>
+                Cancel
+              </button>
+            )}
           </div>
         </div>
       </div>

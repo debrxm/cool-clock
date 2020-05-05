@@ -34,12 +34,13 @@ $shadow: 0px 4px 6px rgba(64, 27, 32, 0.582);
       justify-content: space-between;
     }
     .countdown-time {
-      padding: 0 11px;
+      padding: 0 20px;
       text-align: center;
       margin: 10px 0;
       h2 {
         color: $grayColor;
         span {
+          margin-top: -20px;
           font-size: 12px;
         }
       }
@@ -72,7 +73,7 @@ $shadow: 0px 4px 6px rgba(64, 27, 32, 0.582);
     letter-spacing: 0.5px;
     padding: 0 35px 0 35px;
     font-size: 15px;
-    // background-color: #99999981;
+    font-family: 'Montserrat', sans-serif;
     background-color: transparent;
     color: $grayColor;
     font-weight: bolder;
@@ -89,8 +90,7 @@ $shadow: 0px 4px 6px rgba(64, 27, 32, 0.582);
     background-color: $primaryColor;
     color: $secondaryColor;
     &:hover {
-      background-color: $grayColor;
-      color: $primaryColor;
+      background-color: darken($color: $primaryColor, $amount: 10);
     }
   }
   .button-stop,
@@ -102,8 +102,7 @@ $shadow: 0px 4px 6px rgba(64, 27, 32, 0.582);
     height: 40px;
     line-height: 40px;
     &:hover {
-      background-color: $grayColor;
-      color: $primaryColor;
+      background-color: darken($color: $primaryColor, $amount: 10);
     }
   }
   .btn-flex {
