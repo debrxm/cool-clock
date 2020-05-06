@@ -17,6 +17,8 @@ $shadow: 0px 4px 6px rgba(64, 27, 32, 0.582);
   }
 }
 .clock-preview {
+  position: relative;
+  overflow: hidden;
   width: 150px;
   height: 150px;
   display: flex;
@@ -26,12 +28,33 @@ $shadow: 0px 4px 6px rgba(64, 27, 32, 0.582);
   padding: 10px;
   margin: 20px;
   border: 2px solid #2680eb;
-  h2 {
-    margin: 0 2px;
-    color: #707070;
+  .overlay {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: $secondaryColor;
+    z-index: 2;
+    h2 {
+      margin: 0 2px;
+      color: #707070;
+    }
+    span {
+      font-size: 15px;
+      font-weight: 600;
+    }
   }
-  span {
-    font-size: 15px;
-    font-weight: 600;
+  .roller {
+    height: 90px;
+    width: 5px;
+    // border-radius: 50px;
+    transition: all 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    background-color: #c90202;
+    transform-origin: bottom;
+    position: absolute;
+    z-index: 1;
   }
 }
